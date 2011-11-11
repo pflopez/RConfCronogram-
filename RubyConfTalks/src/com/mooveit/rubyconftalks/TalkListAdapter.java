@@ -5,9 +5,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.Date;
 import java.util.List;
+
+import static android.graphics.Color.parseColor;
 
 public class TalkListAdapter extends ArrayAdapter<Talk> {
   final Activity context;
@@ -26,13 +30,31 @@ public class TalkListAdapter extends ArrayAdapter<Talk> {
     LayoutInflater vi = (LayoutInflater) LayoutInflater.from(context);
 	  View view = vi.inflate(R.layout.talk, null, true);
 
-    Talk issue = talks.get(position);
+    Talk talk = talks.get(position);
 
-//    TextView issueKeyTextView = (TextView) view.findViewById(R.id.issue_key);
-//    issueKeyTextView.setText(issue.getKey());
-//
-//    TextView issueSummaryTextView = (TextView) view.findViewById(R.id.issue_summary);
-//    issueSummaryTextView.setText(issue.getSummary());
+
+
+    Date now = new Date(2011,11,11,9,20);
+
+    if(now.after(talk.getStart()) && now.before(talk.getEnd())){
+      LinearLayout talkLayout = (LinearLayout) view.findViewById(R.id.talk);
+      talkLayout.setBackgroundColor(parseColor("#aaaa00"));
+    }
+
+    TextView date = (TextView) view.findViewById(R.id.time);
+    String minutes = "";
+    if (talk.getStart().getMinutes() < 10){
+      minutes = "0" + talk.getStart().getMinutes();
+    }
+    else{
+      minutes = talk.getStart().getMinutes() + "";
+    }
+    date.setText(talk.getStart().getHours() + ":" + minutes);
+    //date.setText(talk.getStart().toLocaleString());
+
+
+    TextView name = (TextView) view.findViewById(R.id.name);
+    name.setText(talk.getName());
 
     return view;
   }

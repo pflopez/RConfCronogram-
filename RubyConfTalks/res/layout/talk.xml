@@ -4,12 +4,22 @@
   android:layout_width="fill_parent"
   android:layout_height="wrap_content"
   android:orientation="horizontal"
+  android:id="@+id/talk"
+  android:padding="6dip"
   >
   <TextView
     android:id="@+id/time"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content">
-
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:textSize="35dip"  >
     </TextView>
+  <TextView
+    android:id="@+id/name"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:gravity="center_vertical"
+    android:textSize="15dip"
+    android:paddingLeft="10dip"  >
+  </TextView>
 
   </LinearLayout>
