@@ -37,9 +37,6 @@ public class Friday extends Activity {
     talks.add(new Talk(new Date(2011,11,11,18,30),new Date(2011,11,11,19,00),"Ruby's past, present, and future - Yutaka Hara"));
     talks.add(new Talk(new Date(2011,11,11,22,30),new Date(2011,11,11,9,45),"Heroku nos invita a tomar unos tragos!"));
 
-
-
-
     ListView talks_list = (ListView) findViewById(R.id.talks);
     talks_list.setAdapter(new TalkListAdapter(this, R.layout.talk, talks));
 
