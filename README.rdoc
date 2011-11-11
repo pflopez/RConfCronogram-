@@ -5,7 +5,7 @@ Features:
 * read latest tweets from #rubyconfuy
 
 
-{Download link:} [http://google.com]
-{QR code:}[http://google.com]
-{Screenshots:} [http://google.com]
+Download link:
+QR code: 
+Screenshots: http://imgur.com/a/IH9uC
 
