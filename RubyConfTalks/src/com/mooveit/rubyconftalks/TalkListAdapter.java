@@ -1,6 +1,7 @@
 package com.mooveit.rubyconftalks;
 
 import android.app.Activity;
+import android.text.method.DateTimeKeyListener;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.sql.Time;
 import java.util.Date;
 import java.util.List;
 
@@ -32,13 +34,11 @@ public class TalkListAdapter extends ArrayAdapter<Talk> {
 
     Talk talk = talks.get(position);
 
-
-
-    Date now = new Date(2011,11,11,9,20);
+    Date now = new Date();
 
     if(now.after(talk.getStart()) && now.before(talk.getEnd())){
       LinearLayout talkLayout = (LinearLayout) view.findViewById(R.id.talk);
-      talkLayout.setBackgroundColor(parseColor("#aaaa00"));
+      talkLayout.setBackgroundColor(parseColor("#7686D3"));
     }
 
     TextView date = (TextView) view.findViewById(R.id.time);
