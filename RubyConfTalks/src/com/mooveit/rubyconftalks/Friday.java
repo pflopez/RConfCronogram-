@@ -2,6 +2,7 @@ package com.mooveit.rubyconftalks;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -11,10 +12,16 @@ public class Friday extends Activity {
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
+    setContentView(R.layout.talk_list);
+
     List<Talk> talks = new ArrayList<Talk>();
 
     talks.add(new Talk(new Date(2011,11,11,9,0),new Date(2011,11,11,9,45),"lala"));
     talks.add(new Talk(new Date(2011,11,11,9,45),new Date(2011,11,11,10,45),"lala2"));
+
+    ListView talks_list = (ListView) findViewById(R.id.talks);
+    talks_list.setAdapter(new TalkListAdapter(this, R.layout.talk, talks));
+
 
 
 
