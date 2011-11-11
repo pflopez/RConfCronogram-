@@ -12,6 +12,7 @@ import android.widget.TextView;
 import java.sql.Time;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Logger;
 
 import static android.graphics.Color.parseColor;
 
@@ -40,7 +41,6 @@ public class TalkListAdapter extends ArrayAdapter<Talk> {
       LinearLayout talkLayout = (LinearLayout) view.findViewById(R.id.talk);
       talkLayout.setBackgroundColor(parseColor("#7686D3"));
     }
-
     TextView date = (TextView) view.findViewById(R.id.time);
     String minutes = "";
     if (talk.getStart().getMinutes() < 10){
