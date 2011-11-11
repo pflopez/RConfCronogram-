@@ -5,7 +5,9 @@ Features:
 * read latest tweets from #rubyconfuy
 
 
-Download link:
-QR code: 
+Download link: http://goo.gl/gEVKS
+
+QR code: http://imgur.com/YPi6Z
+
 Screenshots: http://imgur.com/a/IH9uC
 
